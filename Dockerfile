@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 RUN pip install --no-cache-dir uv
 
 # Copy dependency files first (for better caching)
-COPY pyproject.toml uv.lock ./
+COPY pyproject.toml ./
 
 # Install dependencies (not the local package yet)
 RUN uv sync --frozen --no-dev --no-install-project
