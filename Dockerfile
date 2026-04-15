@@ -56,6 +56,5 @@ LABEL org.opencontainers.image.title="CourtListener MCP Server" \
       org.opencontainers.image.version="0.1.0" \
       org.opencontainers.image.source="https://github.com/Travis-Prall/court-listener-mcp"
 
-# Default to HTTP transport for container use, bound to all interfaces
-# Override with MCP_TRANSPORT=stdio for CLI integration
-CMD ["python", "-m", "app", "--transport", "http", "--host", "0.0.0.0"]
+# Default to SSE transport for container use, bound to all interfaces
+CMD ["python", "-m", "app", "--transport", "sse", "--host", "0.0.0.0"]
